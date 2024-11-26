@@ -16,8 +16,12 @@ import mock1 from './src/mocks/sobre';
 import Prod from './src/telas/Prod/';
 import mock2 from './src/mocks/prod';
 
+import ListaDesejos from './src/telas/ListaDesejos/';
+
+
 //Audio
 import {Audio} from 'expo-av';
+
 
 
   
@@ -110,7 +114,7 @@ function TabMenu() {
           iconName = focused
             ? 'heart'
             : 'heart-outline';
-        }
+        } 
 
         return <Ionicons name={iconName} size={size} color={color} />
       },
@@ -121,7 +125,7 @@ function TabMenu() {
     <Tab.Screen name="Sobre nós" component={SobreNos} />
     <Tab.Screen name="Kit" component={MenuKit} />
     <Tab.Screen name="Produtos" component={Prods}/>
-    <Tab.Screen name="Lista de Desejos" component={MenuKit}/>
+    <Tab.Screen name="Lista de Desejos" component={ListaDesejos} options={{unmountOnBlur : true}}/>
   </Tab.Navigator>
 }
 
