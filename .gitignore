@@ -16,6 +16,16 @@ web-build/
 *.key
 *.mobileprovision
 
+# Android / Gradle
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+
+# Android Studio
+.idea/
+*.iml
+
 # Metro
 .metro-health-check*
 
@@ -26,10 +36,11 @@ yarn-error.*
 
 # macOS
 .DS_Store
-*.pem
 
-# local env files
-.env*.local
+# Environment
+.env
+.env.*
+!.env.example
 
-# typescript
+# TypeScript
 *.tsbuildinfo
