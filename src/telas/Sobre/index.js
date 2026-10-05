@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ScrollView, Image, StyleSheet, Dimensions, View, Text, TouchableOpacity } from 'react-native';
-import MapView, { Marker } from 'react-native-maps'; // Importa o MapView e Marker
 import { Camera } from 'expo-camera';
 import { Video, ResizeMode } from 'expo-av';
 import video_url from '../../../assets/guime.mp4';
@@ -69,27 +68,6 @@ export default function Index({ detalhes, itens }) {
       <Texto style={styles.titulo}>Sobre Nós</Texto>
       <Text style={styles.detalhes}>{detalhes.detalhes}</Text>
       <Texto style={styles.titulo}>Nossas Lojas </Texto>
-      {/* Adiciona o mapa */}
-      <View style={styles.mapContainer}>
-        <MapView
-          style={styles.map}
-          initialRegion={{
-            latitude: lojas[0].latitude,
-            longitude: lojas[0].longitude,
-            latitudeDelta: 0.5,
-            longitudeDelta: 0.5,
-          }}
-        >
-          {lojas.map(loja => (
-            <Marker
-              key={loja.id}
-              coordinate={{ latitude: loja.latitude, longitude: loja.longitude }}
-              title={loja.nome}
-            />
-          ))}
-        </MapView>
-      </View>
-
       {/* <Image source={itens.imagem} style={styles.imagem} resizeMode='contain' /> */}
       <Texto style={styles.titulo}>Vídeo</Texto>
       <Video
